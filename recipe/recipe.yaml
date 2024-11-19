@@ -23,8 +23,8 @@ requirements:
     - pip
   run:
     - python >=${{ python_min }}
-    - ${{ "numpy >=2.1.0,<3.0.0" if python_version >= 3.13 }}
-    - ${{ "numpy >=1.24.4,<2.0.0" if python_version < 3.13 }}
+    - ${{ "numpy >=2.1.0,<3.0.0" if python >= 3.13 }}
+    - ${{ "numpy >=1.24.4,<2.0.0" if python < 3.13 }}
     - torchvision
     - pytorch >=2.2.2,<3.0.0
     - jsonlines >=3.1.0,<4.0.0
