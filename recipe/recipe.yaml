@@ -23,8 +23,8 @@ requirements:
     - pip
   run:
     - python >=${{ python_min }}
-    - ${{ "numpy >=2.1.0,<3.0.0" if match(python_version, ">=3.13") }}
-    - ${{ "numpy >=1.24.4,<2.0.0" if match(python_version, "<3.13") }}
+    - ${{ "numpy >=2.1.0,<3.0.0" if match(python_version, ">=3.11") }}
+    - ${{ "numpy >=1.24.4,<2.0.0" if match(python_version, "<3.11") }}
     - torchvision
     - pytorch >=2.2.2,<3.0.0
     - jsonlines >=3.1.0,<4.0.0
@@ -38,7 +38,7 @@ tests:
   - python:
       imports:
         - docling_ibm_models
-      pip_check: false # because of false positive: "docling-ibm-models 2.0.4 has requirement mean_average_precision<2022.0.0.0,>=2021.4.26.0, but you have mean-average-precision 2024.1.5.0."
+      pip_check: true # because of false positive: "docling-ibm-models 2.0.4 has requirement mean_average_precision<2022.0.0.0,>=2021.4.26.0, but you have mean-average-precision 2024.1.5.0."
       # python_version: ${{ python_min }}  # need rattler-build >=0.31.0
 
 about:
