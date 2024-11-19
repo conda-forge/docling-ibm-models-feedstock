@@ -1,20 +1,20 @@
 diff --git a/pyproject.toml b/pyproject.toml
-index 60d94eb..d30b690 100644
+index 60d94eb..6bcf398 100644
 --- a/pyproject.toml
 +++ b/pyproject.toml
-@@ -25,8 +25,13 @@ python = "^3.10"
+@@ -24,10 +24,11 @@ packages = [
+ python = "^3.10"
  torch = "^2.2.2"
  torchvision = "^0"
- numpy = [
+-numpy = [
 -    { version = "^2.1.0", markers = 'python_version >= "3.13"' },
 -    { version = "^1.24.4", markers = 'python_version < "3.13"' },
-+    # { version = "^2.1.0", markers = 'python_version >= "3.13"' },
-+    # { version = "^1.24.4", markers = 'python_version < "3.13"' },
-+    # We match the conda-forge python/numpy pinning.
-+    { version = "=1.26", markers = 'python_version >= "3.12"' },
-+    { version = "=1.23", markers = 'python_version == "3.11"' },
-+    { version = "=1.22", markers = 'python_version == "3.10"' },
-+    { version = "=1.22", markers = 'python_version == "3.9"' },
- ]
+-]
++numpy = "*"
++# numpy = [
++#     { version = "^2.1.0", markers = 'python_version >= "3.13"' },
++#     { version = "^1.24.4", markers = 'python_version < "3.13"' },
++# ]
  jsonlines = "^3.1.0"
  Pillow = "^10.0.0"
+ tqdm = "^4.64.0"
