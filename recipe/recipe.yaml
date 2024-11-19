@@ -25,7 +25,7 @@ requirements:
     - pip
   run:
     - python >=${{ python_min }}
-    - numpy
+    # We match the conda-forge python/numpy pinning.
     - ${{ "numpy =1.26" if match(python, ">=3.12") }}
     - ${{ "numpy =1.23" if match(python, "=3.11") }}
     - ${{ "numpy =1.22" if match(python, "=3.10") }}
