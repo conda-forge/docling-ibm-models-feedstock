@@ -39,9 +39,6 @@ tests:
   - python:
       imports:
         - docling_ibm_models
-      # `pip check` is disabled because of false positive:
-      # "docling-ibm-models 2.0.4 has requirement mean_average_precision<2022.0.0.0,>=2021.4.26.0, but you have mean-average-precision 2024.1.5.0."
-      # See https://github.com/DS4SD/docling-ibm-models/pull/52
       pip_check: true
       python_version: ${{ python_min }}
 
