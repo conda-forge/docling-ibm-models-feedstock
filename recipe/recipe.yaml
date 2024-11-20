@@ -1,7 +1,7 @@
 context:
   name: docling-ibm-models
-  version: 2.0.3
-  python_min: "3.10" # remove this line once https://github.com/prefix-dev/rattler-build/pull/1122 is available
+  version: 2.0.6
+  python_min: "3.10"
 
 package:
   name: ${{ name|lower }}
@@ -9,7 +9,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/docling_ibm_models-${{ version }}.tar.gz
-  sha256: 4ac155490a8646daca8aa7a45f0ee136ef96c4a0fbc24812694ec8fc45e5cadb
+  sha256: b06bb8e426c8d53cb300b17a432120917a335390665302d82f311a3647ee1bca
 
 build:
   number: 0
@@ -23,22 +23,21 @@ requirements:
     - pip
   run:
     - python >=${{ python_min }}
-    - pytorch >=2.2.2
+    - pytorch >=2.2.2,<3.0.0
     - torchvision
     - numpy
-    - lxml >=4.9.1
-    - jsonlines >=3.1.0
-    - pillow >=10.0.0
-    - tqdm >=4.64.0
-    - mean-average-precision >=2021.4.26.0
-    - py-opencv >=4.6.0
-    - huggingface_hub >=0.23
+    - jsonlines >=3.1.0,<4.0.0
+    - pillow >=10.0.0,<11.0.0
+    - tqdm >=4.64.0,<5.0.0
+    - py-opencv >=4.6.0,<5.0.0
+    - huggingface_hub >=0.23,<1.0.0
 
 tests:
   - python:
       imports:
         - docling_ibm_models
-      pip_check: false
+      pip_check: true
+      python_version: ${{ python_min }}
 
 about:
   summary: This package contains the AI models used by the Docling PDF conversion package
