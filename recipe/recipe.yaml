@@ -10,6 +10,8 @@ package:
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/docling_ibm_models-${{ version }}.tar.gz
   sha256: b06bb8e426c8d53cb300b17a432120917a335390665302d82f311a3647ee1bca
+  patches:
+    - fix-numpy-dep.patch
 
 build:
   number: 0
@@ -23,9 +25,9 @@ requirements:
     - pip
   run:
     - python >=${{ python_min }}
+    - numpy
     - pytorch >=2.2.2,<3.0.0
     - torchvision
-    - numpy
     - jsonlines >=3.1.0,<4.0.0
     - pillow >=10.0.0,<11.0.0
     - tqdm >=4.64.0,<5.0.0
