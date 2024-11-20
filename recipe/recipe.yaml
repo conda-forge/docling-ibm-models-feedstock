@@ -1,6 +1,6 @@
 context:
   name: docling-ibm-models
-  version: 2.0.4
+  version: 2.0.6
   python_min: "3.10"
 
 package:
@@ -9,7 +9,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/docling_ibm_models-${{ version }}.tar.gz
-  sha256: f21b68755ee253225c95b4710ec68eb575d7cdef4abe07ee9f13936e1c8f208d
+  sha256: b06bb8e426c8d53cb300b17a432120917a335390665302d82f311a3647ee1bca
   patches:
     - fix-numpy-dep.patch
 
@@ -26,14 +26,13 @@ requirements:
   run:
     - python >=${{ python_min }}
     - numpy
-    - torchvision
     - pytorch >=2.2.2,<3.0.0
+    - torchvision
     - jsonlines >=3.1.0,<4.0.0
     - pillow >=10.0.0,<11.0.0
     - tqdm >=4.64.0,<5.0.0
-    - mean-average-precision >=2021.4.26.0
     - py-opencv >=4.6.0,<5.0.0
-    - huggingface_hub >=0.23.0,<1.0.0
+    - huggingface_hub >=0.23,<1.0.0
 
 tests:
   - python:
