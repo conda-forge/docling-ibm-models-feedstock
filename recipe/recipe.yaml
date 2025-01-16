@@ -1,6 +1,6 @@
 context:
   name: docling-ibm-models
-  version: 2.0.6
+  version: 3.1.2
   python_min: "3.10"
 
 package:
@@ -9,37 +9,37 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/docling_ibm_models-${{ version }}.tar.gz
-  sha256: b06bb8e426c8d53cb300b17a432120917a335390665302d82f311a3647ee1bca
-  patches:
-    - fix-numpy-dep.patch
+  sha256: 68c8b8f1cb87a8d8c5c6d6fe2c86679d65a09d354ec413ed13e9493ee0cd3794
 
 build:
-  number: 1
+  number: 0
   noarch: python
-  script: python -m pip install . -vv --no-deps --no-build-isolation
+  script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
 
 requirements:
   host:
-    - python ${{ python_min }}
+    - python ${{ python_min }}.*
     - poetry-core >=1.0.0
     - pip
   run:
     - python >=${{ python_min }}
-    - numpy
     - pytorch >=2.2.2,<3.0.0
     - torchvision
+    - transformers >=4.42.0
+    - numpy >=1.24.4
     - jsonlines >=3.1.0,<4.0.0
     - pillow >=10.0.0,<11.0.0
     - tqdm >=4.64.0,<5.0.0
-    - py-opencv >=4.6.0,<5.0.0
+    - py-opencv >=4.6.0.66,<5.0.0
     - huggingface_hub >=0.23,<1.0.0
+    - safetensors >=0.4.3,<1
 
 tests:
   - python:
       imports:
         - docling_ibm_models
       pip_check: true
-      python_version: ${{ python_min }}
+      python_version: ${{ python_min }}.*
 
 about:
   summary: This package contains the AI models used by the Docling PDF conversion package
