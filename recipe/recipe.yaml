@@ -1,6 +1,6 @@
 context:
   name: docling-ibm-models
-  version: 3.1.2
+  version: "3.2.0"
   python_min: "3.10"
 
 package:
@@ -9,12 +9,12 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/docling_ibm_models-${{ version }}.tar.gz
-  sha256: 68c8b8f1cb87a8d8c5c6d6fe2c86679d65a09d354ec413ed13e9493ee0cd3794
+  sha256: b0329256fb1464d51854f1654a4e09cbb812edfeaa104b45677952c7135c5ef8
   patches:
     - fix-numpy-dep.patch
 
 build:
-  number: 2
+  number: 0
   noarch: python
   script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
 
