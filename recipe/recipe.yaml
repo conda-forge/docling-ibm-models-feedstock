@@ -1,6 +1,6 @@
 context:
   name: docling-ibm-models
-  version: "3.2.0"
+  version: "3.2.1"
   python_min: "3.10"
 
 package:
@@ -9,7 +9,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/docling_ibm_models-${{ version }}.tar.gz
-  sha256: b0329256fb1464d51854f1654a4e09cbb812edfeaa104b45677952c7135c5ef8
+  sha256: abd1bdc58f00600065eedbfbd34876704d5004cd20884a2c0a61ca2ee5a927dd
   patches:
     - fix-numpy-dep.patch
 
