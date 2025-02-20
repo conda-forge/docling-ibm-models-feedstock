@@ -1,7 +1,6 @@
 context:
   name: docling-ibm-models
   version: "3.4.0"
-  python_min: "3.10"
 
 package:
   name: ${{ name|lower }}
