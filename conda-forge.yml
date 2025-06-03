@@ -8,3 +8,4 @@ conda_forge_output_validation: true
 conda_install_tool: pixi
 bot:
   inspection: update-grayskull
+  automerge: true
