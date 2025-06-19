@@ -1,5 +1,5 @@
 diff --git a/pyproject.toml b/pyproject.toml
-index 3e00613..b9b6ea2 100644
+index bba0e1f..428918d 100644
 --- a/pyproject.toml
 +++ b/pyproject.toml
 @@ -41,7 +41,7 @@ dependencies = [
@@ -8,6 +8,6 @@ index 3e00613..b9b6ea2 100644
    'transformers (>=4.42.0,<5.0.0)',
 -  'numpy (>=1.24.4,<3.0.0)',
 +  'numpy (>=1.22,<3.0.0)',
+   "rtree>=1.0.0",
  ]
  
- [project.urls]
