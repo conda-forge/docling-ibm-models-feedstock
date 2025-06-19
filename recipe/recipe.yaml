@@ -9,8 +9,6 @@ package:
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/docling_ibm_models-${{ version }}.tar.gz
   sha256: 7c286e616f3a17466b61fa7f01de3d48a18418a2c12a1061aa196b907e517553
-  patches:
-    - fix-numpy-dep.patch
 
 build:
   number: 0
