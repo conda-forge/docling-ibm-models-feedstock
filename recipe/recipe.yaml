@@ -1,6 +1,6 @@
 context:
   name: docling-ibm-models
-  version: "3.4.4"
+  version: "3.5.0"
 
 package:
   name: ${{ name|lower }}
@@ -8,9 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/docling_ibm_models-${{ version }}.tar.gz
-  sha256: 70060f42b2aeb6d17ade4eb557de0e78d084abd33140f8b99f0429a491d64b59
-  patches:
-    - fix-numpy-dep.patch
+  sha256: 7c286e616f3a17466b61fa7f01de3d48a18418a2c12a1061aa196b907e517553
 
 build:
   number: 0
@@ -36,6 +34,7 @@ requirements:
     - docling-core >=2.19.0,<3.0.0
     - transformers >=4.42.0,<5.0.0
     - numpy >=1.24.4,<3.0.0
+    - rtree >=1.0.0
 
 tests:
   - python:
