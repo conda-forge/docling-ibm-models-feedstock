@@ -1,6 +1,6 @@
 context:
   name: docling-ibm-models
-  version: 3.9.1
+  version: 3.10.0
 
 package:
   name: ${{ name|lower }}
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/docling_ibm_models-${{ version }}.tar.gz
-  sha256: ac6cd1c2be93437cbb5c1f1a1a4030792a38859a1655b14f25cbc8aec760c351
+  sha256: 2a05875973284fe1709f37f3d6f48210ea348a1b5704c57f8852397c676638c1
 
 build:
   number: 0
@@ -24,8 +24,8 @@ requirements:
     - python >=${{ python_min }}
     - pytorch >=2.2.2,<3.0.0
     - torchvision >=0,<1
-    - jsonlines >=3.1.0,<4.0.0
-    - pillow >=10.0.0,<12.0.0
+    - jsonlines >=3.1.0,<5.0.0
+    - pillow >=10.0.0,<13.0.0
     - tqdm >=4.64.0,<5.0.0
     - huggingface_hub >=0.23,<1
     - safetensors >=0.4.3,<1
@@ -35,7 +35,6 @@ requirements:
     - numpy >=1.24.4,<3.0.0
     - rtree >=1.0.0
     - accelerate >=1.2.1,<2.0.0
-    - opencv >=4.6.0.66,<5.0.0.0
 tests:
   - python:
       imports:
