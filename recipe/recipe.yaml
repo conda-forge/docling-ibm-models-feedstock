@@ -1,6 +1,6 @@
 context:
   name: docling-ibm-models
-  version: "3.12.0"
+  version: 3.13.0
 
 package:
   name: ${{ name|lower }}
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/docling_ibm_models-${{ version }}.tar.gz
-  sha256: 85c2b6c9dbb7fbb8eaf0f2a462b5984626457a6dc33148643491270c27767b46
+  sha256: f402effae8a63b0e5c3b5ce13120601baa2cd8098beef1d53ab5a056443758d3
 
 build:
   number: 0
@@ -31,7 +31,7 @@ requirements:
     - safetensors >=0.4.3,<1
     - pydantic >=2.0.0,<3.0.0
     - docling-core >=2.19.0,<3.0.0
-    - transformers >=4.42.0,<5.0.0
+    - transformers >=4.42.0,<6.0.0,!=5.0.*,!=5.1.*,!=5.2.*,!=5.3.*
     - numpy >=1.24.4,<3.0.0
     - rtree >=1.0.0
     - accelerate >=1.2.1,<2.0.0
