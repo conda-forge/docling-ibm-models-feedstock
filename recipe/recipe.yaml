@@ -1,6 +1,6 @@
 context:
   name: docling-ibm-models
-  version: 4.0.2
+  version: "4.0.3"
 
 package:
   name: ${{ name|lower }}
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/docling_ibm_models-${{ version }}.tar.gz
-  sha256: cfc2e265d9ee5dc7bc4fe001916851adedba1d8020584d170b35da2d79321f8d
+  sha256: 509e89af75e06b48500977dca11ecb6022e81b1526c90dd54587a60ccc82bdb6
 
 build:
   number: 0
